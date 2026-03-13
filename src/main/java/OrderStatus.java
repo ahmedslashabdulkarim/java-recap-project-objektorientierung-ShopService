@@ -1,5 +1,5 @@
 
-//Programmierung: Bestellstatus
+// Programmierung: Bestellstatus
 
 public enum OrderStatus {
 
