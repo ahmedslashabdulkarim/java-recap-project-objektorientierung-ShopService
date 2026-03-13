@@ -29,7 +29,7 @@ public class ShopService {
         );
         return orderRepo.addOrder(newOrder);
     }
-    // Programmierung: Bestellstatus mit stream
+    //Programmierung: Bestellstatus mit stream
     public List<Order> getOrdersByStatus(OrderStatus status) {
         return orderRepo.getOrders()
                 .stream()
