@@ -3,11 +3,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+
+
+import lombok.RequiredArgsConstructor;
 import lombok.With;
 
+@RequiredArgsConstructor
 public class ShopService {
-    private ProductRepo productRepo = new ProductRepo();
-    private OrderRepo orderRepo = new OrderMapRepo();
+
+    private final ProductRepo productRepo;
+    private final OrderRepo orderRepo;
 
     public Order addOrder(List<String> productIds) {
         List<Product> products = new ArrayList<>();

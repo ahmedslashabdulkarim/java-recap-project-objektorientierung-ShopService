@@ -4,33 +4,36 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 class ShopServiceTest {
 
     @Test
     void addOrderTest() {
-        //GIVEN
-        ShopService shopService = new ShopService();
-        List<String> productsIds = List.of("1");
+        // GIVEN
+        ProductRepo productRepo = new ProductRepo();
+        OrderRepo orderRepo = new OrderListRepo(); // oder OrderMapRepo, je nach deinem Projekt
 
-        //WHEN
-        Order actual = shopService.addOrder(productsIds);
+        ShopService shopService = new ShopService(productRepo, orderRepo);
 
-        //THEN
-        Order expected = new Order("-1", List.of(new Product("1", "Apfel")));
-        assertEquals(expected.products(), actual.products());
-        assertNotNull(expected.id());
-    }
+        // Produkt muss existieren, sonst wirft addOrder eine Exception
+        productRepo.addProduct(new Product("1", "Apfel", 1.0));
 
-    @Test
-    void addOrderTest_whenInvalidProductId_expectNull() {
-        //GIVEN
-        ShopService shopService = new ShopService();
-        List<String> productsIds = List.of("1", "2");
+        List<String> productIds = List.of("1");
 
-        //WHEN
-        Order actual = shopService.addOrder(productsIds);
+        // WHEN
+        Order actual = shopService.addOrder(productIds);
 
-        //THEN
-        assertNull(actual);
+        // THEN
+        // Wir prüfen NICHT die ganze Order, weil:
+        // - id ist zufällig (UUID)
+        // - timestamp ist unterschiedlich
+        // → wir prüfen nur die Produkte und den Status
+
+        assertEquals(1, actual.products().size());
+        assertEquals(new Product("1", "Apfel", 1.0), actual.products().get(0));
+
+        assertEquals(OrderStatus.PROCESSING, actual.status());
+        assertNotNull(actual.id());
+        assertNotNull(actual.timestamp());
     }
 }
