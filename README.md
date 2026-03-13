@@ -1,5 +1,5 @@
 ===========================================
-JAVA-SHOP-SYSTEM – ZUSAMMENFASSUNGSPROJEKT
+JAVA-SHOP-SYSTEM – 
 ===========================================
 
 Dieses Projekt ist ein objektorientiertes Java-Shop-System.
