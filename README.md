@@ -9,23 +9,23 @@ ID‑Generierung und einem ShopService, der Bestellungen entgegennimmt, validier
 1.1 Projektstruktur:
 
 src/main/java/
-├── IdService.java
-├── Main.java
-├── Order.java
-├── OrderListRepo.java
-├── OrderMapRepo.java
-├── OrderRepo.java
-├── OrderStatus.java
-├── Product.java
-├── ProductRepo.java
-├── ShopService.java
-└── UUIDIdService.java
+    ├── IdService.java
+    ├── Main.java
+    ├── Order.java
+    ├── OrderListRepo.java
+    ├── OrderMapRepo.java
+    ├── OrderRepo.java
+    ├── OrderStatus.java
+    ├── Product.java
+    ├── ProductRepo.java
+    ├── ShopService.java
+    └── UUIDIdService.java
 
 src/test/java/
-├── OrderListRepoTest.java
-├── OrderMapRepoTest.java
-├── ProductRepoTest.java
-└── ShopServiceTest.java
+    ├── OrderListRepoTest.java
+    ├── OrderMapRepoTest.java
+    ├── ProductRepoTest.java
+    └── ShopServiceTest.java
 
 
 1.2 Tests:
