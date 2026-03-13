@@ -4,7 +4,7 @@ SHOP-SYSTEM –
 
 Dieses Projekt ist ein objektorientiertes Java-Shop-System.
 Es besteht aus Produkten, Bestellungen, Repositories, einem IdService zur-
-ID‑Generierung und einem ShopService, der Bestellungen entgegennimmt, validiert und verwaltet.
+ID ‑ Generierung und einem ShopService, der Bestellungen entgegennimmt, validiert und verwaltet.
 
 1.1 Projektstruktur:
 
