@@ -10,4 +10,8 @@ public record Order(
         OrderStatus status,
         Instant timestamp
 
-){}
+){
+    public Order withStatus(OrderStatus newStatus){
+        return new Order(id, products, newStatus, timestamp);
+    }
+}

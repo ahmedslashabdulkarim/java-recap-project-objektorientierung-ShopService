@@ -13,7 +13,9 @@ class ShopServiceTest {
         ProductRepo productRepo = new ProductRepo();
         OrderRepo orderRepo = new OrderListRepo(); // oder OrderMapRepo, je nach deinem Projekt
 
-        ShopService shopService = new ShopService(productRepo, orderRepo);
+
+        IdService idService = () -> "test-id"; // einfache Fake-ID für Tests
+        ShopService shopService = new ShopService(productRepo, orderRepo, idService);
 
         // Produkt muss existieren, sonst wirft addOrder eine Exception
         productRepo.addProduct(new Product("1", "Apfel", 1.0));

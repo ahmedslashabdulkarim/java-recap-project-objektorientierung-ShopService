@@ -3,12 +3,18 @@ import java.time.Instant;
 import java.util.*;
 import java.util.stream.Collectors;
 
-@RequiredArgsConstructor
+//@RequiredArgsConstructor // nicht mehr gebraucht, da ich das Konstructor händisch geschrieben.
 public class ShopService {
 
     private final ProductRepo productRepo;
     private final OrderRepo orderRepo;
     private final IdService idService;
+
+    public ShopService(ProductRepo productRepo, OrderRepo orderRepo, IdService idService){
+        this.productRepo = productRepo;
+        this.orderRepo = orderRepo;
+        this.idService = idService;
+    }
 
     public Order addOrder(List<String> productIds) {
         List<Product> products = new ArrayList<>();
